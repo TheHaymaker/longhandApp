@@ -49,8 +49,8 @@ textarea {
 }
 
 .keycode, .charcode {
-/*	display: none;
-*/}
+	display: none;
+}
 
 form:first-child {
 	color: white;
