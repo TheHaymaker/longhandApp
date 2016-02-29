@@ -1,0 +1,757 @@
+body {
+  background-color: rgb(3, 169, 244);
+}
+
+#container {
+	height: 65%;
+	overflow: overlay;
+	margin-bottom: 20px;
+}
+
+textarea {
+	width: 100%;
+    height: 22%;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 53px;
+    font-size: 15px;
+    font-family: helvetica, sans-serif;
+    padding: 5px;
+    padding-left: 27px;
+    overflow: scroll;
+}
+
+.button {
+	width: 123px;
+    height: 36px;
+    border-radius: 5px;
+    background-color: orange;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+    position: absolute;
+    right: 19px;
+    top: 3px;
+    color: white;
+    font-size: 19px;
+    font-family: Helvetica;
+    font-weight: bold;
+    padding-top: 9px;
+    text-align: center;
+  	-webkit-transition: all 2s;
+       	-moz-transition: all 2s;
+        	-ms-transition: all 2s;
+         	-o-transition: all 2s;
+            	transition: all 2s;
+}
+
+.button:hover {
+	-moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+
+}
+
+.keycode, .charcode {
+	display: none;
+}
+
+.row {
+	min-height: 35px;
+	width: 100%;
+	position: relative;
+	/*border: 2px dotted yellow;*/
+	display: flex;
+	padding: 5px;
+}
+
+.row:nth-last-of-type(1) {
+
+}
+
+.letter {
+	/*border: 1px solid black;*/
+	width: 26px;
+	height: 35px;
+	display: inline-block;
+	align-self: flex-end;
+
+	/* Uncomment below and darken background color for chalk-effect */
+	/*mix-blend-mode: screen;*/
+}
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 30px;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+  margin-left: 5px;
+  background-color: rgba(0, 0, 0, 0.49);
+  border-radius: 3px;
+  color: transparent;
+}
+
+@keyframes "blink" {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.49);
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.49);
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.49);
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.49);
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.49);
+  }
+}
+/*.row:last-child .letter:last-child::after {
+	width: 0;
+  height: 0;
+  border-left: 10px solid black;
+  border-right: 4px solid rgb(16, 1, 1);
+  border-top: 29px solid #060000;
+  position: absolute;
+  content: "";
+  top: 6px;
+  left: 20px;
+}*/
+
+.heightCheck {
+	height: 35px;
+	width: 0px;
+	display: inline-block;
+}
+
+.space {
+/* no styles needed */
+}
+
+.a {
+	background: url('/small-hand-writing.png') no-repeat -31px -155px;
+	width: 24px;
+	height: 22px;
+}
+
+.a-cap {
+	background: url('/small-hand-writing.png') no-repeat -30px -89px;
+	width: 27px;
+	height: 35px;
+}
+
+.b {
+	background: url('/small-hand-writing.png') no-repeat -78px -148px;
+	width: 20px;
+	height: 31px;
+}
+
+.b-cap {
+	background: url('/small-hand-writing.png') no-repeat -77px -91px;
+	width: 24px;
+	height: 35px;
+}
+
+.c {
+	background: url('/small-hand-writing.png') no-repeat -122px -159px;
+	width: 18px;
+	height: 19px;
+}
+
+.C-cap {
+	background: url('/small-hand-writing.png') no-repeat -119px -95px;
+	width: 23px;
+	height: 29px;
+}
+
+.d {
+	background: url('/small-hand-writing.png') no-repeat -166px -150px;
+	width: 19px;
+	height: 26px;
+}
+.D-cap {
+	background: url('/small-hand-writing.png') no-repeat -164px -96px;
+	width: 27px;
+	height: 31px;
+}
+
+.e {
+	background: url('/small-hand-writing.png') no-repeat -209px -156px;
+	width: 21px;
+	height: 22px;
+}
+
+.E-cap {
+	background: url('/small-hand-writing.png') no-repeat -215px -101px;
+	width: 17px;
+	height: 22px;
+}
+
+.f {
+	background: url('/small-hand-writing.png') no-repeat -254px -149px;
+	width: 17px;
+	height: 27px;
+}
+
+.F-cap {
+	background: url('/small-hand-writing.png') no-repeat -261px -95px;
+	width: 20px;
+	height: 29px;
+}
+
+.g {
+	background: url('/small-hand-writing.png') no-repeat -303px -156px;
+	width: 19px;
+	height: 29px;
+	margin-bottom: -10px;
+	
+}
+
+.G-cap {
+	background: url('/small-hand-writing.png') no-repeat -305px -96px;
+	width: 27px;
+	height: 28px;
+}
+
+.h {
+	background: url('/small-hand-writing.png') no-repeat -363px -148px;
+	width: 18px;
+	height: 27px;
+}
+
+.H-cap {
+	background: url('/small-hand-writing.png') no-repeat -364px -97px;
+	width: 21px;
+	height: 30px;
+}
+
+.i {
+	background: url('/small-hand-writing.png') no-repeat -414px -155px;
+	width: 9px;
+	height: 25px;
+}
+
+.I-cap {
+	background: url('/small-hand-writing.png') no-repeat -414px -98px;
+	width: 15px;
+	height: 27px;
+}
+
+.j {
+	background: url('/small-hand-writing.png') no-repeat -456px -153px;
+	width: 18px;
+	height: 32px;
+	margin-bottom: -10px;
+}
+
+.J-cap {
+	background: url('/small-hand-writing.png') no-repeat -458px -98px;
+	width: 24px;
+	height: 27px;
+}
+
+.k {
+	background: url('/small-hand-writing.png') no-repeat -509px -153px;
+	width: 20px;
+	height: 26px;
+}
+
+.K-cap {
+	background: url('/small-hand-writing.png') no-repeat -510px -99px;
+	width: 22px;
+	height: 27px;
+}
+
+.l {
+	background: url('/small-hand-writing.png') no-repeat -562px -156px;
+	width: 11px;
+	height: 23px;
+}
+
+.L-cap {
+	background: url('/small-hand-writing.png') no-repeat -561px -101px;
+	width: 18px;
+	height: 24px;
+}
+
+.m {
+	background: url('/small-hand-writing.png') no-repeat -601px -161px;
+	width: 27px;
+	height: 16px;
+}
+
+.M-cap {
+	background: url('/small-hand-writing.png') no-repeat -605px -99px;
+	width: 24px;
+	height: 25px;
+}
+
+.n {
+	background: url('/small-hand-writing.png') no-repeat -655px -161px;
+	width: 18px;
+	height: 18px;
+}
+
+.N-cap {
+	background: url('/small-hand-writing.png') no-repeat -649px -98px;
+	width: 25px;
+	height: 26px;
+}
+
+.o {
+	background: url('/small-hand-writing.png') no-repeat -700px -162px;
+	width: 19px;
+	height: 17px;
+}
+
+.O-cap {
+	background: url('/small-hand-writing.png') no-repeat -700px -99px;
+	width: 23px;
+	height: 24px;
+}
+
+.p {
+	background: url('/small-hand-writing.png') no-repeat -743px -160px;
+	width: 21px;
+	height: 27px;
+	margin-bottom: -10px;
+}
+
+.P-cap {
+	background: url('/small-hand-writing.png') no-repeat -749px -96px;
+	width: 21px;
+	height: 25px;
+}
+
+.q {
+	background: url('/small-hand-writing.png') no-repeat -28px -266px;
+	width: 22px;
+	height: 34px;
+	margin-bottom: -10px;
+}
+
+.Q-cap {
+	background: url('/small-hand-writing.png') no-repeat -28px -201px;
+	width: 32px;
+	height: 34px;
+
+}
+
+.r {
+	background: url('/small-hand-writing.png') no-repeat -88px -268px;
+	width: 16px;
+	height: 19px;
+}
+
+.R-cap {
+	background: url('/small-hand-writing.png') no-repeat -90px -202px;
+	width: 25px;
+	height: 31px;
+}
+
+.s {
+	background: url('/small-hand-writing.png') no-repeat -136px -268px;
+	width: 19px;
+	height: 20px;
+}
+
+.S-cap {
+	background: url('/small-hand-writing.png') no-repeat -137px -204px;
+	width: 27px;
+	height: 29px;
+}
+
+.t {
+	background: url('/small-hand-writing.png') no-repeat -192px -259px;
+	width: 17px;
+	height: 29px;
+}
+
+.T-cap {
+	background: url('/small-hand-writing.png') no-repeat -193px -204px;
+	width: 24px;
+	height: 25px;
+}
+
+.u {
+	background: url('/small-hand-writing.png') no-repeat -246px -270px;
+	width: 20px;
+	height: 18px;
+}
+
+.U-cap {
+	background: url('/small-hand-writing.png') no-repeat -245px -204px;
+	width: 24px;
+	height: 29px;
+}
+
+.v {
+	background: url('/small-hand-writing.png') no-repeat -298px -267px;
+	width: 20px;
+	height: 21px;
+}
+
+.V-cap {
+	background: url('/small-hand-writing.png') no-repeat -298px -202px;
+	width: 25px;
+	height: 29px;
+}
+
+.w {
+	background: url('/small-hand-writing.png') no-repeat -350px -268px;
+	width: 24px;
+	height: 19px;
+}
+
+.W-cap {
+	background: url('/small-hand-writing.png') no-repeat -352px -205px;
+	width: 35px;
+	height: 31px;
+}
+
+.x {
+	background: url('/small-hand-writing.png') no-repeat -414px -272px;
+	width: 20px;
+	height: 18px;
+}
+
+.X-cap {
+	background: url('/small-hand-writing.png') no-repeat -416px -204px;
+	width: 24px;
+	height: 30px;
+}
+
+.y {
+	background: url('/small-hand-writing.png') no-repeat -473px -272px;
+	width: 21px;
+	height: 33px;
+	margin-bottom: -12px;
+}
+
+.y-cap {
+	background: url('/small-hand-writing.png') no-repeat -473px -205px;
+	width: 24px;
+	height: 30px;
+}
+
+.z {
+	background: url('/small-hand-writing.png') no-repeat -526px -272px;
+	width: 20px;
+	height: 20px;
+}
+
+.z-cap {
+	background: url('/small-hand-writing.png') no-repeat -525px -207px;
+	width: 25px;
+	height: 29px;
+}
+
+
+.return {
+	display: inline-block;
+	width: 5px;
+	content: "/";
+}
+
+.comma {
+	background: url('/small-hand-writing.png') no-repeat -573px -383px;
+	width: 12px;
+	height: 13px;
+}
+
+.less_than {
+	background: url('/small-hand-writing.png') no-repeat -359px -407px;
+	width: 22px;
+	height: 30px;
+	align-self: center;
+}
+
+.greater_than {
+	background: url('/small-hand-writing.png') no-repeat -410px -406px;
+	width: 22px;
+	height: 32px;
+	align-self: center;
+}
+
+.forward_slash {
+	background: url('/small-hand-writing.png') no-repeat -221px -406px;
+	width: 25px;
+	height: 39px;
+}
+
+.back_slash {
+	background: url('/small-hand-writing.png') no-repeat -278px -406px;
+	width: 24px;
+	height: 36px;
+}
+
+.pipe {
+	background: url('/small-hand-writing.png') no-repeat -473px -26px;
+	width: 9px;
+	height: 38px;
+}
+
+.dash {
+	background: url('/small-hand-writing.png') no-repeat -18px -426px;
+	width: 17px;
+	height: 10px;
+	align-self: center;
+}
+
+.period {
+	background: url('/small-hand-writing.png') no-repeat -532px -381px;
+	width: 12px;
+	height: 13px;
+	}
+
+.question_mark {
+	background: url('/small-hand-writing.png') no-repeat -763px -352px;
+	width: 21px;
+	height: 43px;
+	}
+
+.exclamation_point {
+	background: url('/small-hand-writing.png') no-repeat -716px -354px;
+	width: 15px;
+	height: 43px;
+	}
+
+.at {
+	background: url('/small-hand-writing.png') no-repeat -100px -28px;
+	width: 31px;
+	height: 31px;
+	align-self: center;
+	}
+
+.number_hash {
+	background: url('/small-hand-writing.png') no-repeat -159px -31px;
+	width: 30px;
+	height: 28px;
+	align-self: center;
+}
+	
+
+.dollar {
+	background: url('/small-hand-writing.png') no-repeat -407px -27px;
+	width: 21px;
+	height: 38px;
+	align-self: center;
+	}
+
+.percentage {
+
+	}
+
+.ampersand {
+	background: url('/small-hand-writing.png') no-repeat -34px -21px;
+	width: 24px;
+	height: 44px;
+	}
+
+.asterisk {
+	background: url('/small-hand-writing.png') no-repeat -683px -357px;
+	width: 20px;
+	height: 17px;
+	align-self: flex-start;
+	}
+
+.parenthesis_left {
+	background: url('/small-hand-writing.png') no-repeat -569px -302px;
+	width: 20px;
+	height: 40px;
+	align-self: center;
+	}
+
+.parenthesis_right {
+	background: url('/small-hand-writing.png') no-repeat -631px -303px;
+	width: 19px;
+	height: 39px;
+	align-self: center;
+	}
+
+.underscore {
+	background: url('/small-hand-writing.png') no-repeat -138px -435px;
+	width: 26px;
+	height: 8px;
+	}
+
+.equals {
+	background: url('/small-hand-writing.png') no-repeat -277px -36px;
+	width: 29px;
+	height: 17px;
+	align-self: center;
+	}
+
+.plus {
+	background: url('/small-hand-writing.png') no-repeat -222px -34px;
+	width: 24px;
+	height: 23px;
+	}
+
+.zero {
+	background: url('/small-hand-writing.png') no-repeat -470px -363px;
+	width: 25px;
+	height: 29px;
+	}
+
+.one {
+	background: url('/small-hand-writing.png') no-repeat -21px -362px;
+	width: 18px;
+	height: 33px;
+	}
+
+.two {
+	background: url('/small-hand-writing.png') no-repeat -72px -362px;
+	width: 21px;
+	height: 34px;
+	}
+
+.three {
+	background: url('/small-hand-writing.png') no-repeat -127px -361px;
+	width: 20px;
+	height: 32px;
+	}
+
+.four {
+	background: url('/small-hand-writing.png') no-repeat -175px -362px;
+	width: 22px;
+	height: 31px;
+	}
+
+.five {
+	background: url('/small-hand-writing.png') no-repeat -226px -362px;
+	width: 23px;
+	height: 29px;
+	}
+
+.six {
+	background: url('/small-hand-writing.png') no-repeat -276px -363px;
+	width: 23px;
+	height: 29px;
+	}
+
+.seven {
+	background: url('/small-hand-writing.png') no-repeat -327px -364px;
+	width: 23px;
+	height: 31px;
+	}
+
+.eight {
+	background: url('/small-hand-writing.png') no-repeat -378px -363px;
+	width: 22px;
+	height: 29px;
+	}
+
+.nine {
+	background: url('/small-hand-writing.png') no-repeat -425px -363px;
+	width: 20px;
+	height: 26px;
+	}
+
+.bracket_left {
+	background: url('/small-hand-writing.png') no-repeat -366px -300px;
+	width: 17px;
+	height: 40px;
+}
+
+.bracket_right {
+	background: url('/small-hand-writing.png') no-repeat -405px -305px;
+	width: 16px;
+	height: 32px;
+}
+
+.curly_bracket_left {
+	background: url('/small-hand-writing.png') no-repeat -235px -302px;
+	width: 21px;
+	height: 43px;
+}
+
+.curly_bracket_righ {
+	background: url('/small-hand-writing.png') no-repeat -288px -301px;
+	width: 19px;
+	height: 44px;
+}
+
+.single_quote {
+	background: url('/small-hand-writing.png') no-repeat -590px -238px;
+	width: 11px;
+	height: 16px;
+	align-self: flex-start;
+}
+
+.double_quote {
+	background: url('/small-hand-writing.png') no-repeat -737px -234px;
+	width: 15px;
+	height: 18px;
+	align-self: flex-start;
+}
+
+.semi-colon {
+	background: url('/small-hand-writing.png') no-repeat -609px -371px;
+	width: 14px;
+	height: 27px;
+	align-self: center;
+}
+
+.colon {
+	background: url('/small-hand-writing.png') no-repeat -610px -422px;
+	width: 13px;
+	height: 22px;
+	align-self: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
