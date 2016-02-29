@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(3, 169, 244);
+  background-color: #ABBF39;
 }
 
 #container {
@@ -11,8 +11,10 @@ body {
 textarea {
 	width: 100%;
     height: 22%;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 53px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-box-shadow: 0px 0px 53px;
+            box-shadow: 0px 0px 53px;
     font-size: 15px;
     font-family: helvetica, sans-serif;
     padding: 5px;
@@ -26,7 +28,6 @@ textarea {
     border-radius: 5px;
     background-color: orange;
     -webkit-box-shadow: 0 8px 6px -6px black;
-    -moz-box-shadow: 0 8px 6px -6px black;
     box-shadow: 0 8px 6px -6px black;
     position: absolute;
     right: 19px;
@@ -38,21 +39,21 @@ textarea {
     padding-top: 9px;
     text-align: center;
   	-webkit-transition: all 2s;
-       	-moz-transition: all 2s;
-        	-ms-transition: all 2s;
-         	-o-transition: all 2s;
             	transition: all 2s;
 }
 
 .button:hover {
-	-moz-box-shadow:    inset 0 0 10px #000000;
-   -webkit-box-shadow: inset 0 0 10px #000000;
-   box-shadow:         inset 0 0 10px #000000;
+ -webkit-box-shadow: inset 0 0 10px #000000;
+ box-shadow:         inset 0 0 10px #000000;
 
 }
 
 .keycode, .charcode {
-	display: none;
+/*	display: none;
+*/}
+
+form:first-child {
+	color: white;
 }
 
 .row {
@@ -60,6 +61,9 @@ textarea {
 	width: 100%;
 	position: relative;
 	/*border: 2px dotted yellow;*/
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	padding: 5px;
 }
@@ -73,19 +77,18 @@ textarea {
 	width: 26px;
 	height: 35px;
 	display: inline-block;
-	align-self: flex-end;
+	-webkit-align-self: flex-end;
+	    -ms-flex-item-align: end;
+	        align-self: flex-end;
 
 	/* Uncomment below and darken background color for chalk-effect */
-	/*mix-blend-mode: screen;*/
+	mix-blend-mode: multiply; /* screen */
 }
 
 .blinking-cursor {
   font-weight: 100;
   font-size: 30px;
   -webkit-animation: 1s blink step-end infinite;
-  -moz-animation: 1s blink step-end infinite;
-  -ms-animation: 1s blink step-end infinite;
-  -o-animation: 1s blink step-end infinite;
   animation: 1s blink step-end infinite;
   margin-left: 5px;
   background-color: rgba(0, 0, 0, 0.49);
@@ -102,34 +105,7 @@ textarea {
   }
 }
 
-@-moz-keyframes blink {
-  from, to {
-    background-color: transparent;
-  }
-  50% {
-    background-color: rgba(0, 0, 0, 0.49);
-  }
-}
-
 @-webkit-keyframes "blink" {
-  from, to {
-    background-color: transparent;
-  }
-  50% {
-    background-color: rgba(0, 0, 0, 0.49);
-  }
-}
-
-@-ms-keyframes "blink" {
-  from, to {
-    background-color: transparent;
-  }
-  50% {
-    background-color: rgba(0, 0, 0, 0.49);
-  }
-}
-
-@-o-keyframes "blink" {
   from, to {
     background-color: transparent;
   }
@@ -235,7 +211,7 @@ textarea {
 	width: 19px;
 	height: 29px;
 	margin-bottom: -10px;
-	
+
 }
 
 .G-cap {
@@ -494,14 +470,18 @@ textarea {
 	background: url('/small-hand-writing.png') no-repeat -359px -407px;
 	width: 22px;
 	height: 30px;
-	align-self: center;
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
 }
 
 .greater_than {
 	background: url('/small-hand-writing.png') no-repeat -410px -406px;
 	width: 22px;
 	height: 32px;
-	align-self: center;
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
 }
 
 .forward_slash {
@@ -526,7 +506,9 @@ textarea {
 	background: url('/small-hand-writing.png') no-repeat -18px -426px;
 	width: 17px;
 	height: 10px;
-	align-self: center;
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
 }
 
 .period {
@@ -551,22 +533,28 @@ textarea {
 	background: url('/small-hand-writing.png') no-repeat -100px -28px;
 	width: 31px;
 	height: 31px;
-	align-self: center;
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
 	}
 
 .number_hash {
 	background: url('/small-hand-writing.png') no-repeat -159px -31px;
 	width: 30px;
 	height: 28px;
-	align-self: center;
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
 }
-	
+
 
 .dollar {
 	background: url('/small-hand-writing.png') no-repeat -407px -27px;
 	width: 21px;
 	height: 38px;
-	align-self: center;
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
 	}
 
 .percentage {
@@ -583,21 +571,27 @@ textarea {
 	background: url('/small-hand-writing.png') no-repeat -683px -357px;
 	width: 20px;
 	height: 17px;
-	align-self: flex-start;
+	-webkit-align-self: flex-start;
+	    -ms-flex-item-align: start;
+	        align-self: flex-start;
 	}
 
 .parenthesis_left {
 	background: url('/small-hand-writing.png') no-repeat -569px -302px;
 	width: 20px;
 	height: 40px;
-	align-self: center;
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
 	}
 
 .parenthesis_right {
 	background: url('/small-hand-writing.png') no-repeat -631px -303px;
 	width: 19px;
 	height: 39px;
-	align-self: center;
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
 	}
 
 .underscore {
@@ -610,7 +604,9 @@ textarea {
 	background: url('/small-hand-writing.png') no-repeat -277px -36px;
 	width: 29px;
 	height: 17px;
-	align-self: center;
+	-webkit-align-self: center;
+	    -ms-flex-item-align: center;
+	        align-self: center;
 	}
 
 .plus {
@@ -697,7 +693,7 @@ textarea {
 	height: 43px;
 }
 
-.curly_bracket_righ {
+.curly_bracket_right {
 	background: url('/small-hand-writing.png') no-repeat -288px -301px;
 	width: 19px;
 	height: 44px;
@@ -707,28 +703,37 @@ textarea {
 	background: url('/small-hand-writing.png') no-repeat -590px -238px;
 	width: 11px;
 	height: 16px;
-	align-self: flex-start;
+	-webkit-align-self: flex-start;
+	    -ms-flex-item-align: start;
+	        align-self: flex-start;
 }
 
 .double_quote {
 	background: url('/small-hand-writing.png') no-repeat -737px -234px;
 	width: 15px;
 	height: 18px;
-	align-self: flex-start;
+	-webkit-align-self: flex-start;
+	    -ms-flex-item-align: start;
+	        align-self: flex-start;
 }
 
 .semi-colon {
 	background: url('/small-hand-writing.png') no-repeat -609px -371px;
 	width: 14px;
 	height: 27px;
-	align-self: center;
+	margin-bottom: -3px;
+	-webkit-align-self: flex-end;
+	    -ms-flex-item-align: flex-end;
+	        align-self: flex-end;
 }
 
 .colon {
 	background: url('/small-hand-writing.png') no-repeat -610px -422px;
 	width: 13px;
 	height: 22px;
-	align-self: center;
+	-webkit-align-self: flex-end;
+	    -ms-flex-item-align: flex-end;
+	        align-self: flex-end;
 }
 
 
