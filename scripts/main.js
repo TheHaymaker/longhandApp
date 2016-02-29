@@ -223,12 +223,18 @@ $('input:radio[name="font-style"]').change(
         }
     });
 
+
+
 //Keypress keyboard function
 $(document).keypress(function(e){
 
 	var $row = $('.row').last();
 	var code = e.keyCode || e.which;
 
+	if (code === 8 && !$(e.target).is("textarea")) {
+        e.preventDefault();
+        // $('#container').focus();
+    }
 
 		$('.keycode').html("<p>Keycode: " + code + "</p>");
 		$('.charcode').html("<p>Charcode: " + code + "</p>");
@@ -272,13 +278,17 @@ $(document).keypress(function(e){
 $(document).keydown(function(e){
 	var $row = $('.row:last-child');
 	var code = e.keyCode || e.which;
+	 if (code === 8 && !$(e.target).is("textarea")) {
+        e.preventDefault();
+        // $('#container').focus();
+    }
 	// delete is 8
 	// space is 32
 	// enter / return is 13
 	if(code === 32) {
 
 	} else if (code === 8 ) {
-		
+
 	//use code to check for and grab class value
 	var letterClass = translator[code];
 	var lastLetterNode;
@@ -296,7 +306,7 @@ $(document).keydown(function(e){
 					$(lastRow).remove();
 				}
 			}
-		
+
 	} else if (code === 13 ) {
 	//use code to check for and grab class value
 	var letterClass = translator[code];
@@ -311,8 +321,8 @@ $(document).keydown(function(e){
 	}
 	// append new node on
 	$($container).append(newRow);
-	
-		
+
+
 	}
 insertBlinker();
 centerText();
@@ -359,18 +369,18 @@ var insertBlinker = function blink(){
 	for (var i = 0; i < activeRowNode.length; i++) {
 		letterNode = activeRowNode[i];
 	};
-	
+
 	//remove any other blinkers first
-	
+
 		$(blinker).remove();
 		blinker = $('<span class="blinking-cursor">=</span>');
-	
+
 	// add blinker at the end of the last row
 	if(letterNode) {
 		$(letterNode).after(blinker);
 	} else {
 		$(activeRow).append(blinker);
-	} 
+	}
 }
 
 var centerText = function(){
